@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp();
   WidgetsFlutterBinding.ensureInitialized();
-  final ficha = FichaDND();
-  print("teste $ficha");
-  runApp(ficha);
+  runApp(FichaDND());
 }
 
 class FichaDND extends StatefulWidget {
@@ -38,7 +37,6 @@ class FichaDNDState extends State<FichaDND> {
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
-          print(snapshot.connectionState);
           return MaterialApp(
             theme: ThemeData(
               accentColor: Colors.black,
