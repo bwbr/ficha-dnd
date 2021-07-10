@@ -1,5 +1,5 @@
-import 'package:fichadnd/listHero.dart';
-import 'package:fichadnd/progress.dart';
+import 'package:fichadnd/screens/listHero.dart';
+import 'package:fichadnd/components/progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
