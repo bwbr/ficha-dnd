@@ -1,4 +1,5 @@
 import 'package:fichadnd/listHero.dart';
+import 'package:fichadnd/progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -38,7 +39,16 @@ class FichaDNDState extends State<FichaDND> {
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           print(snapshot.connectionState);
-          return Container();
+          return MaterialApp(
+            theme: ThemeData(
+              accentColor: Colors.black,
+              buttonTheme: ButtonThemeData(
+                buttonColor: Colors.black,
+                textTheme: ButtonTextTheme.primary,
+              ),
+            ),
+            home: ListHero(),
+          );
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
@@ -50,7 +60,7 @@ class FichaDNDState extends State<FichaDND> {
               textTheme: ButtonTextTheme.primary,
             ),
           ),
-          home: ListHero(),
+          home: Progress(),
         );
       },
     );
